@@ -1,31 +1,9 @@
-<!-- Example usage in your view file -->
-<!-- app/views/customers/index.html.erb -->
 
 <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-sm border border-gray-200">
-  <!-- Header -->
-  <div class="px-4 py-3 border-b border-gray-200 bg-gray-50">
-    <div class="flex items-center">
-      <input 
-        type="checkbox" 
-        id="select_all" 
-        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 mr-3"
-      >
-      <span class="text-sm font-medium text-gray-700">
-        Showing <%= @customers.count %> customers
-      </span>
-    </div>
-  </div>
-
-  <!-- Customer List -->
+  <%= render TableHeaderComponent.new(total_customers: @customers&.count || 0) %>
   <div class="divide-y divide-gray-200">
     <% @customers.each do |customer| %>
       <%= render CustomerItemComponent.new(customer: customer) %>
     <% end %>
-  </div>
-
-  <!-- Pagination (if needed) -->
-  <div class="flex items-center justify-between px-4 py-3 border-t border-gray-200">
-    <%= heroicon("arrow-left", type: :outline) %>
-    <%= heroicon("arrow-right", type: :outline) %>
   </div>
 </div>
