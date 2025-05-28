@@ -1,17 +1,18 @@
 <div class="relative" data-controller="dropdown">
   <%= render ButtonComponent.new(
     icon: "ellipsis-horizontal",
+    class: "p-1 w-8 h-8 rounded-lg text-gray-900 justify-center",
     "data-action": "click->dropdown#toggle",
     "data-dropdown-target": "trigger"
   ) %>
 
-  <div class="absolute right-0 top-full mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50 hidden"
+  <div class="absolute right-0 top-full mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 p-2 z-50 hidden"
       data-dropdown-target="menu">
     <% items.each do |item| %>
       <%= render ButtonComponent.new(
         text: item[:text],
         icon: item[:icon],
-        class: "flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-150 border-0 bg-transparent rounded-none justify-start #{'text-red-600 hover:text-red-700' if item[:destructive]}"
+        class: "flex items-center w-full px-1 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors duration-150 border-0 bg-transparent rounded-md justify-start cursor-pointer justify-center #{'text-red-600 hover:text-red-700' if item[:destructive]}"
       ) %>
     <% end %>
   </div>

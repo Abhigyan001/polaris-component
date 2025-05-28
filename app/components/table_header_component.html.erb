@@ -7,7 +7,7 @@
       <input
         type="checkbox"
         id="select_all"
-        class="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded mr-3 cursor-pointer"
+        class="w-4 h-4 cursor-pointer border border-gray-600 accent-gray-700 mr-3"
         data-table-header-target="selectAllCheckbox"
         data-action="change->table-header#toggleSelectAll"
       >
@@ -17,7 +17,7 @@
     </div>
 
     <div class="flex items-center space-x-2 hidden" data-table-header-target="actionButtons">
-      <%= render ButtonComponent.new(text: "Edit customers") %>
+      <%= render ButtonComponent.new(text: "Edit customers", class: "px-2 py-1 rounded-lg text-gray-600") %>
 
       <%= render DropdownMenuComponent.new(items: [
         {

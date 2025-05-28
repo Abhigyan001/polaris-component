@@ -1,24 +1,12 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["selectAllCheckbox", "selectionText", "actionButtons"];
-  static values = { totalCustomers: Number };
-
-  connect() {
-    this.updateSelectionCount();
-
-    document.addEventListener(
-      "change",
-      this.handleCustomerCheckboxChange.bind(this)
-    );
-  }
-
-  disconnect() {
-    document.removeEventListener(
-      "change",
-      this.handleCustomerCheckboxChange.bind(this)
-    );
-  }
+  static targets = [
+    "selectAllCheckbox",
+    "selectionText",
+    "actionButtons",
+    "customerItem"
+  ];
 
   toggleSelectAll() {
     const isChecked = this.selectAllCheckboxTarget.checked;
@@ -28,6 +16,17 @@ export default class extends Controller {
 
     customerCheckboxes.forEach((checkbox) => {
       checkbox.checked = isChecked;
+
+      const customerItemContainer = checkbox.closest(
+        '[data-customer-item-target="container"]'
+      );
+      if (customerItemContainer) {
+        if (isChecked) {
+          customerItemContainer.classList.add("bg-gray-100");
+        } else {
+          customerItemContainer.classList.remove("bg-gray-100");
+        }
+      }
     });
 
     this.updateSelectionCount();
@@ -37,6 +36,17 @@ export default class extends Controller {
     if (event.target.name === "selected_customers[]") {
       this.updateSelectionCount();
       this.updateSelectAllState();
+
+      const customerItemContainer = event.target.closest(
+        '[data-customer-item-target="container"]'
+      );
+      if (customerItemContainer) {
+        if (event.target.checked) {
+          customerItemContainer.classList.add("bg-gray-100");
+        } else {
+          customerItemContainer.classList.remove("bg-gray-100");
+        }
+      }
     }
   }
 

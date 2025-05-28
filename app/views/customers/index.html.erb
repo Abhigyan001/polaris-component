@@ -6,12 +6,12 @@
       <%= render CustomerItemComponent.new(customer: customer) %>
     <% end %>
   </div>
-  <div class="flex items-center px-4 py-3 rounded-b-2xl justify-center bg-gray-100 gap-1">
+  <div class="flex items-center px-4 py-3 rounded-b-2xl justify-center gap-[2px]">
     <div dir="ltr">
-      <%= render ButtonComponent.new(text: "", icon: "chevron-left", disabled: true, class: "p-2 text-gray-400 justify-self-center rounded-s-lg border-none bg-gray-200") %>
+      <%= render ButtonComponent.new(text: "", icon: "chevron-left", class: "p-2 text-gray-400 justify-self-center rounded-s-lg border-none bg-gray-200 focus:text-gray-800") %>
     </div>
     <div dir="rtl">
-      <%= render ButtonComponent.new(text: "", icon: "chevron-right", class: "p-2 text-gray-400 justify-self-center rounded-s-lg border-none bg-gray-200") %>
+      <%= render ButtonComponent.new(text: "", icon: "chevron-right", class: "p-2 text-gray-400 justify-self-center rounded-s-lg border-none bg-gray-200 focus:text-gray-800") %>
     </div>
   </div>
 </div>

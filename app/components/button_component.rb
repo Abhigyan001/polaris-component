@@ -11,11 +11,7 @@ class ButtonComponent < ViewComponent::Base
   attr_reader :text, :icon, :icon_type, :options
 
   def button_classes
-    base_classes = "inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md transition-colors duration-150"
-
-    if text.blank? && icon.present?
-      base_classes = "inline-flex items-center justify-center text-gray-400 hover:text-gray-600 border border-gray-300 transition-colors duration-150"
-    end
+    base_classes = "inline-flex items-center text-sm font-medium border border-gray-300 duration-150 cursor-pointer"
 
     custom_classes = options.delete(:class) || ""
     "#{base_classes} #{custom_classes}".strip
