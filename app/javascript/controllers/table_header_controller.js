@@ -28,6 +28,17 @@ export default class extends Controller {
 
     customerCheckboxes.forEach((checkbox) => {
       checkbox.checked = isChecked;
+
+      const customerItemContainer = checkbox.closest(
+        '[data-customer-item-target="container"]'
+      );
+      if (customerItemContainer) {
+        if (isChecked) {
+          customerItemContainer.classList.add("bg-gray-100");
+        } else {
+          customerItemContainer.classList.remove("bg-gray-100");
+        }
+      }
     });
 
     this.updateSelectionCount();
