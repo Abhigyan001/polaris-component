@@ -1,24 +1,42 @@
-# README
+# Button Component Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project demonstrates a highly customizable button component built with Rails 8, View Components, and TailwindCSS v4.
 
-Things you may want to cover:
+## Project Installation & Demo:
 
-* Ruby version
+[See Video](https://vimeo.com/1088457288?share=copy)
 
-* System dependencies
+## Build-With
 
-* Configuration
+- Rails 8
+- TailwindCSS v4
+- Rails View Components
+- Heroicons
 
-* Database creation
+## Getting Started
 
-* Database initialization
+### Prerequisites
 
-* How to run the test suite
+To get this project up and running locally, you must already have npm or yarn installed on your computer
 
-* Services (job queues, cache servers, search engines, etc.)
+**To get this project set up on your local machine, follow these simple steps:**
 
-* Deployment instructions
+1. Open Terminal.
+2. Navigate to your desired location to download the contents of this repository.
+3. Copy and paste the following code into the Terminal: git clone https://github.com/Abhigyan001/polaris-component.git
+4. Run ```cd polaris-component```.
+5. Run ```bundle install``` to get the necesary gems.
+6. Run `rails db:reset`
+7. Run `bin/dev`
 
-* ...
+## Author Details::
+
+👤 ABHIGYAN Mahanta
+
+- Github: [@Abhigyan001](https://github.com/Abhigyan001)
+- Twitter: [@abhigyan_001](https://twitter.com/abhigyan_001)
+- LinkedIn: [Abhigyan](https://www.linkedin.com/in/abhigyanmahanta/)
+
+## Show your support
+
+Give ⭐ Star — it helps!
