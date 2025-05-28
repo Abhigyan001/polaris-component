@@ -1,13 +1,13 @@
-<div class="px-4 py-3 border-b border-gray-200 bg-gray-50"
-     data-controller="table-header" 
-     data-table-header-total-customers-value="<%= total_customers %>">
+<div class="border-b border-gray-200 rounded-t-2xl"
+    data-controller="table-header"
+    data-table-header-total-customers-value="<%= total_customers %>">
 
-  <div class="flex items-center justify-between">
+  <div class="flex items-center justify-between h-12 px-4 py-8">
     <div class="flex items-center">
       <input
         type="checkbox"
         id="select_all"
-        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 mr-3"
+        class="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded mr-3 cursor-pointer"
         data-table-header-target="selectAllCheckbox"
         data-action="change->table-header#toggleSelectAll"
       >
@@ -16,9 +16,7 @@
       </span>
     </div>
 
-    <div class="flex items-center space-x-2"
-         data-table-header-target="actionButtons"
-         style="display: none;">
+    <div class="flex items-center space-x-2 hidden" data-table-header-target="actionButtons">
       <%= render ButtonComponent.new(text: "Edit customers") %>
 
       <%= render DropdownMenuComponent.new(items: [

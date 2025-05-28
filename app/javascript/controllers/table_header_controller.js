@@ -48,10 +48,10 @@ export default class extends Controller {
 
     if (selectedCount === 0) {
       this.selectionTextTarget.textContent = `Showing ${this.totalCustomersValue} customers`;
-      this.actionButtonsTarget.style.display = "none";
+      this.actionButtonsTarget.classList.add("hidden");
     } else {
       this.selectionTextTarget.textContent = `${selectedCount} selected`;
-      this.actionButtonsTarget.style.display = "flex";
+      this.actionButtonsTarget.classList.remove("hidden");
     }
   }
 

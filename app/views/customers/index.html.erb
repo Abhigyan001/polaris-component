@@ -1,13 +1,17 @@
 
-<div class="max-w-2xl mx-auto bg-white rounded-lg shadow-sm border border-gray-200">
+<div class="mx-auto w-4xl bg-white rounded-2xl shadow-sm border border-gray-200 cursor-pointer">
   <%= render TableHeaderComponent.new(total_customers: @customers&.count || 0) %>
   <div class="divide-y divide-gray-200">
     <% @customers.each do |customer| %>
       <%= render CustomerItemComponent.new(customer: customer) %>
     <% end %>
   </div>
-  <div class="flex items-center justify-between px-4 py-3 border-t border-gray-200">
-    <%= render ButtonComponent.new(text: "", icon: "chevron-left", disabled: true, class: "p-2 text-gray-400 hover:text-gray-600 disabled:opacity-50") %>
-    <%= render ButtonComponent.new(text: "", icon: "chevron-right", class: "p-2 text-gray-400 hover:text-gray-600") %>
+  <div class="flex items-center px-4 py-3 rounded-b-2xl justify-center bg-gray-100 gap-1">
+    <div dir="ltr">
+      <%= render ButtonComponent.new(text: "", icon: "chevron-left", disabled: true, class: "p-2 text-gray-400 justify-self-center rounded-s-lg border-none bg-gray-200") %>
+    </div>
+    <div dir="rtl">
+      <%= render ButtonComponent.new(text: "", icon: "chevron-right", class: "p-2 text-gray-400 justify-self-center rounded-s-lg border-none bg-gray-200") %>
+    </div>
   </div>
 </div>

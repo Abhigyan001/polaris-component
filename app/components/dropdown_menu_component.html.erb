@@ -1,5 +1,4 @@
 <div class="relative" data-controller="dropdown">
-  <!-- Dropdown trigger button -->
   <%= render ButtonComponent.new(
     icon: "ellipsis-horizontal",
     "data-action": "click->dropdown#toggle",
@@ -7,7 +6,7 @@
   ) %>
 
   <div class="absolute right-0 top-full mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50 hidden"
-       data-dropdown-target="menu">
+      data-dropdown-target="menu">
     <% items.each do |item| %>
       <%= render ButtonComponent.new(
         text: item[:text],

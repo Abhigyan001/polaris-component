@@ -1,6 +1,6 @@
 <button class="<%= button_classes %>" <%= button_attributes.html_safe %>>
   <% if icon.present? %>
-    <%= heroicon(icon, variant: icon_type, class: "w-4 h-4#{ text.present? ? ' mr-2' : '' }") %>
+    <%= heroicon(icon, variant: icon_type, class: "w-4 h-4 cursor-pointer #{ text.present? ? ' mr-2' : '' }") %>
   <% end %>
   <%= text if text.present? %>
 </button>
